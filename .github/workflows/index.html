@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLS Stream Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-color: #bb86fc;
+            --text-color: #ffffff;
+            --text-secondary: #aaaaaa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        /* Video Container Setup */
+        .video-box {
+            width: 100%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            aspect-ratio: 16 / 9;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* URL Input Controls */
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--accent-color);
+        }
+
+        button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        button:active {
+            opacity: 0.8;
+        }
+
+        /* Channel List Styling */
+        .section-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        .playlist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .channel-item {
+            background-color: var(--card-bg);
+            padding: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+        .channel-item.active {
+            border-left-color: var(--accent-color);
+            background-color: #251e2b;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>HLS Stream Player</h2>
+
+        <div class="video-box">
+            <video id="hls-video" controls autoplay></video>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="stream-url" placeholder="Paste .m3u8 link here...">
+            <button onclick="playManualUrl()">Play</button>
+        </div>
+
+        <div class="section-title">Channels Playlist</div>
+        <div class="playlist" id="playlist-container"></div>
+    </div>
+
+    <script>
+        // Full playlist containing all 6 streaming channels
+        const channels = [
+            { name: "Live Stream 1", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8" },
+            { name: "Live Stream 2 (English)", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist_b4096000_slENG.m3u8" },
+            { name: "Live Stream 3", url: "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8" },
+            { name: "Live Stream 4", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8" },
+            { name: "Live Stream 5", url: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8" },
+            { name: "Live Stream 6", url: "https://cp11.adabmedia.com/hls2/sport.m3u8" }
+        ];
+
+        const videoElement = document.getElementById('hls-video');
+        let hlsInstance = null;
+
+        // Render the UI playlist dynamically
+        function setupPlaylist() {
+            const container = document.getElementById('playlist-container');
+            container.innerHTML = '';
+            
+            channels.forEach((channel, index) => {
+                const item = document.createElement('div');
+                item.className = 'channel-item';
+                item.id = `ch-${index}`;
+                item.onclick = () => loadHlsStream(channel.url, `ch-${index}`);
+                
+                item.innerHTML = `<div class="channel-name">${channel.name}</div>`;
+                container.appendChild(item);
+            });
+        }
+
+        // Core streaming controller logic
+        function loadHlsStream(url, elementId) {
+            // Update selected highlight styling
+            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+            if(elementId) {
+                const activeEl = document.getElementById(elementId);
+                if(activeEl) activeEl.classList.add('active');
+            }
+
+            // Clean up previous engine instances to prevent crashing or memory leaks
+            if (hlsInstance) {
+                hlsInstance.destroy();
+            }
+
+            if (Hls.isSupported()) {
+                hlsInstance = new Hls();
+                hlsInstance.loadSource(url);
+                hlsInstance.attachMedia(videoElement);
+                hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
+                    videoElement.play();
+                });
+                
+                hlsInstance.on(Hls.Events.ERROR, function (event, data) {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                hlsInstance.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                hlsInstance.recoverMediaError();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
+            } 
+            // Fallback layout for native engines (like Safari/iOS devices)
+            else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
+                videoElement.src = url;
+                videoElement.addEventListener('loadedmetadata', function() {
+                    videoElement.play();
+                });
+            }
+        }
+
+        function playManualUrl() {
+            const manualUrl = document.getElementById('stream-url').value.trim();
+            if (manualUrl) {
+                loadHlsStream(manualUrl, null);
+            } else {
+                alert("Please paste a valid streaming link first.");
+            }
+        }
+
+        // Initialize setup on page launch
+        setupPlaylist();
+        if(channels.length > 0) {
+            loadHlsStream(channels[0].url, 'ch-0');
+        }
+    </script>
+</body>
+</html>
