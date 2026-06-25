@@ -73,7 +73,7 @@
                 id: 9,
                 name: "Channel I HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/1723-audio_113532_eng=113200-video=2202800.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+                logo: "https://images.seeklogo.com/logo-png/42/1/channel-i-logo-png_seeklogo-427745.png"
             },
             {
                 id: 2,
@@ -116,7 +116,7 @@
                 id: 11,
                 name: "NTV HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/1716-audio_113462_eng=113200-video=2202800.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+                logo: "https://images.seeklogo.com/logo-png/39/1/ntv-channel-logo-png_seeklogo-396286.png"
             },
             {
                 id: 12,
@@ -128,13 +128,13 @@
                 id: 13,
                 name: "T Sports HD",
                 streamUrl: "https://trs1.aynaott.com/tsports/tracks-v1a1/mono.ts.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+                logo: "https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png"
             },
             {
                 id: 14,
                 name: "Ekattor TV HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+                logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
             }
         ];
 
