@@ -79,7 +79,7 @@
                 id: 2,
                 name: "bein Sports",
                 streamUrl: "https://cp11.adabmedia.com/hls2/sport.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sports+1"
+                logo: "https://images.seeklogo.com/logo-png/31/1/bein-sport-logo-png_seeklogo-314494.png"
             },
             {
                 id: 3,
@@ -97,7 +97,7 @@
                 id: 5,
                 name: "Sony Sports 2 HD",
                 streamUrl: "https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8",
-                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+                logo: "https://e7.pngegg.com/pngimages/362/254/png-clipart-star-sports-3-logo-television-channel-star-india-news-live-television-text-thumbnail.png"
             },      
       
             {
@@ -122,7 +122,7 @@
                 id: 12,
                 name: "Star News HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/1710-audio_113402_eng=113200-video=3224800.m3u8",
-                logo: "https://starnews.com.bd/image/mob_logo.png"
+                logo: "https://www.jagojobs.com/media/company_logos/2024December/6880-star-news-20241215144514.png"
             },
             {
                 id: 13,
