@@ -55,7 +55,7 @@
                 id: 6,
                 name: "Somoy TV",
                 streamUrl: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
-                logo: "https://via.placeholder.com/150?text=Somoy+TV" // এখানে লোগোর লিংক দিতে পারেন
+                logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png" // এখানে লোগোর লিংক দিতে পারেন
             },
             {
                 id: 2,
