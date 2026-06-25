@@ -80,6 +80,18 @@
                 name: "Sony Sports 2 HD",
                 streamUrl: "https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8",
                 logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+            },
+            {
+                id: 6,
+                name: "BTV",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709-audio_113392_eng=113200-video=2202800.m3u8",
+                logo: "https://via.placeholder.com/150?text=Stream+4"
+            },
+            {
+                id: 7,
+                name: "Machranga HD",
+                streamUrl: "[https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8](https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/1722-audio_113522_eng=113200-video=2202800.m3u8)",
+                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
             }
         ];
 
