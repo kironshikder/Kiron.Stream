@@ -70,6 +70,12 @@
                 logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png" // এখানে লোগোর লিংক দিতে পারেন
             },
             {
+                id: 15,
+                name: "Deepto TV HD",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
+                logo: "https://images.seeklogo.com/logo-png/51/1/deepto-tv-logo-png_seeklogo-513994.png"
+            },
+  t      {
                 id: 9,
                 name: "Channel I HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/1723-audio_113532_eng=113200-video=2202800.m3u8",
@@ -99,9 +105,33 @@
                 streamUrl: "https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8",
                 logo: "https://e7.pngegg.com/pngimages/362/254/png-clipart-star-sports-3-logo-television-channel-star-india-news-live-television-text-thumbnail.png"
             },      
-      
+     
             {
-                id: 8,
+                id: 16,
+                name: "Independent TV HD",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/1704-audio_113342_eng=113200-video=1692000.m3u8",
+                logo: "https://e7.pngegg.com/pngimages/969/124/png-clipart-logo-bangladesh-independent-television-television-channel-design-television-text-thumbnail.png"
+            },
+            {
+                id: 17,
+                name: "test HD",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
+                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+            },
+            {
+                id: 18,
+                name: "test HD",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
+                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+            },
+            {
+                id: 19,
+                name: "test HD",
+                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
+                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+            },
+            {
+                id: 9,
                 name: "Sangeet Bangla HD",
                 streamUrl: "[https://cdn-4.pishow.tv/live/1143/master.m3u8]",
                 logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
