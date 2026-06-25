@@ -1,242 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HLS Stream Player</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    
+    <title>Kiron-Tech - সম্পূর্ণ ফ্রি লাইভ স্ট্রিমিং</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
     <style>
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --accent-color: #bb86fc;
-            --text-color: #ffffff;
-            --text-secondary: #aaaaaa;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-            box-sizing: border-box;
-            padding: 15px;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: var(--accent-color);
-        }
-
-        /* Video Container Setup */
-        .video-box {
-            width: 100%;
-            background: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
-            aspect-ratio: 16 / 9;
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        /* URL Input Controls */
-        .input-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        input {
-            flex: 1;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            font-size: 0.95rem;
-            outline: none;
-        }
-
-        input:focus {
-            border-color: var(--accent-color);
-        }
-
-        button {
-            padding: 12px 20px;
-            border-radius: 8px;
-            border: none;
-            background-color: var(--accent-color);
-            color: #000;
-            font-weight: bold;
-            font-size: 0.95rem;
-            cursor: pointer;
-        }
-
-        button:active {
-            opacity: 0.8;
-        }
-
-        /* Channel List Styling */
-        .section-title {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--text-secondary);
-        }
-
-        .playlist {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .channel-item {
-            background-color: var(--card-bg);
-            padding: 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.2s;
-            border-left: 4px solid transparent;
-        }
-
-        .channel-item.active {
-            border-left-color: var(--accent-color);
-            background-color: #251e2b;
-        }
-
-        .channel-name {
-            font-weight: 600;
-            font-size: 1rem;
-        }
+        body { background-color: #0b0f19; color: #fff; }
+        .hero-bg { background: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), #0b0f19), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920') no-repeat center center/cover; }
+        .channel-card:hover { transform: translateY(-5px); border-color: #10b981; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>HLS Stream Player</h2>
-
-        <div class="video-box">
-            <video id="hls-video" controls autoplay></video>
+    <header class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black text-emerald-500">PSTU <span class="text-white">Radio</span></a>
+            <span class="bg-emerald-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">সম্পূর্ণ ফ্রি</span>
         </div>
+    </header>
 
-        <div class="input-group">
-            <input type="text" id="stream-url" placeholder="Paste .m3u8 link here...">
-            <button onclick="playManualUrl()">Play</button>
+    <section class="hero-bg py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-900/60 p-4 rounded-2xl border border-gray-800 shadow-2xl">
+                    <video id="pstu-player" class="video-js vjs-big-play-centered w-full aspect-video rounded-xl" controls preload="auto" data-setup='{}'>
+                        <source src="https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8" type="application/x-mpegURL">
+                    </video>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 id="channel-title" class="text-xl font-bold text-emerald-400">বর্তমানে চলছে: Somoy TV</h2>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section-title">Channels Playlist</div>
-        <div class="playlist" id="playlist-container"></div>
-    </div>
+    <section class="py-12 bg-[#090d16]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-emerald-500 pl-4">সকল চ্যানেল লিস্ট</h2>
+            <div id="channel-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-gray-600 border-t border-gray-800">
+        <p>&copy; 2026 PSTU Radio. All Rights Reserved.</p>
+    </footer>
 
     <script>
-        // Full playlist containing all 6 streaming channels
+        // আপনার দেওয়া ৫টি লাইভ চ্যানেলের লিস্ট এখানে সাজানো হয়েছে
         const channels = [
-            { name: "Live Stream 1", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8" },
-            { name: "Live Stream 2 (English)", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist_b4096000_slENG.m3u8" },
-            { name: "Live Stream 3", url: "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8" },
-            { name: "Live Stream 4", url: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8" },
-            { name: "Live Stream 5", url: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8" },
-            { name: "Live Stream 6", url: "https://cp11.adabmedia.com/hls2/sport.m3u8" }
+            {
+                id: 1,
+                name: "Somoy TV",
+                streamUrl: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
+                logo: "https://via.placeholder.com/150?text=Somoy+TV" // এখানে লোগোর লিংক দিতে পারেন
+            },
+            {
+                id: 2,
+                name: "bein Sports",
+                streamUrl: "https://cp11.adabmedia.com/hls2/sport.m3u8",
+                logo: "https://via.placeholder.com/150?text=Sports+1"
+            },
+            {
+                id: 3,
+                name: "RTB Go",
+                streamUrl: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8",
+                logo: "https://via.placeholder.com/150?text=RTB+Go"
+            },
+            {
+                id: 4,
+                name: "Ten Sports 1",
+                streamUrl: "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8",
+                logo: "https://via.placeholder.com/150?text=Stream+4"
+            },
+            {
+                id: 5,
+                name: "Sony Sports 2 HD",
+                streamUrl: "https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8",
+                logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
+            }
         ];
 
-        const videoElement = document.getElementById('hls-video');
-        let hlsInstance = null;
+        const grid = document.getElementById('channel-grid');
+        const player = videojs('pstu-player');
 
-        // Render the UI playlist dynamically
-        function setupPlaylist() {
-            const container = document.getElementById('playlist-container');
-            container.innerHTML = '';
-            
-            channels.forEach((channel, index) => {
-                const item = document.createElement('div');
-                item.className = 'channel-item';
-                item.id = `ch-${index}`;
-                item.onclick = () => loadHlsStream(channel.url, `ch-${index}`);
-                
-                item.innerHTML = `<div class="channel-name">${channel.name}</div>`;
-                container.appendChild(item);
-            });
-        }
+        // গ্রিড রেন্ডার করা
+        channels.forEach(ch => {
+            const card = document.createElement('div');
+            card.className = "channel-card bg-[#0f172a] p-4 rounded-xl border border-gray-800 cursor-pointer text-center transition-all duration-200";
+            card.innerHTML = `
+                <img src="${ch.logo}" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover border border-gray-700">
+                <h3 class="font-bold text-sm text-gray-200">${ch.name}</h3>
+            `;
+            card.onclick = () => playStream(ch.streamUrl, ch.name);
+            grid.appendChild(card);
+        });
 
-        // Core streaming controller logic
-        function loadHlsStream(url, elementId) {
-            // Update selected highlight styling
-            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
-            if(elementId) {
-                const activeEl = document.getElementById(elementId);
-                if(activeEl) activeEl.classList.add('active');
-            }
-
-            // Clean up previous engine instances to prevent crashing or memory leaks
-            if (hlsInstance) {
-                hlsInstance.destroy();
-            }
-
-            if (Hls.isSupported()) {
-                hlsInstance = new Hls();
-                hlsInstance.loadSource(url);
-                hlsInstance.attachMedia(videoElement);
-                hlsInstance.on(Hls.Events.MANIFEST_PARSED, function() {
-                    videoElement.play();
-                });
-                
-                hlsInstance.on(Hls.Events.ERROR, function (event, data) {
-                    if (data.fatal) {
-                        switch (data.type) {
-                            case Hls.ErrorTypes.NETWORK_ERROR:
-                                hlsInstance.startLoad();
-                                break;
-                            case Hls.ErrorTypes.MEDIA_ERROR:
-                                hlsInstance.recoverMediaError();
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                });
-            } 
-            // Fallback layout for native engines (like Safari/iOS devices)
-            else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
-                videoElement.src = url;
-                videoElement.addEventListener('loadedmetadata', function() {
-                    videoElement.play();
-                });
-            }
-        }
-
-        function playManualUrl() {
-            const manualUrl = document.getElementById('stream-url').value.trim();
-            if (manualUrl) {
-                loadHlsStream(manualUrl, null);
-            } else {
-                alert("Please paste a valid streaming link first.");
-            }
-        }
-
-        // Initialize setup on page launch
-        setupPlaylist();
-        if(channels.length > 0) {
-            loadHlsStream(channels[0].url, 'ch-0');
+        // প্লেয়ার ফাংশন
+        function playStream(url, name) {
+            player.src({ src: url, type: 'application/x-mpegURL' });
+            player.play();
+            document.getElementById('channel-title').innerText = "বর্তমানে চলছে: " + name;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
 </html>
-
