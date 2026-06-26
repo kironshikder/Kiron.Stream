@@ -152,7 +152,7 @@
                 id: 12,
                 name: "Star News HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/1710-audio_113402_eng=113200-video=3224800.m3u8",
-                logo: "https://www.jagojobs.com/media/company_logos/2024December/6880-star-news-20241215144514.png"
+                logo: "https://starnews.com.bd/image/mob_logo.png"
             },
             {
                 id: 13,
