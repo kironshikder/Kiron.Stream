@@ -10,6 +10,20 @@
         body { background-color: #0b0f19; color: #fff; }
         .hero-bg { background: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), #0b0f19), url('https://lh3.googleusercontent.com/pw/AP1GczOPgX7ZV6vblOeWt99wR4Gvn-XvalwFXBNgZ2ad9i7VoecvA9Aw3hWbYqBos0tu8EBg1n5Iq-zAqx7Hd4f2fDg-_mbUfXsIxTsypY5r1e4CBq4drNHxL5hDPwIj58d0dtuA-VRoaq1yX_TS6jhqQ6MtHQ=w912-h608-s-no-gm?authuser=0') no-repeat center center/cover; }
         .channel-card:hover { transform: translateY(-5px); border-color: #10b981; }
+        
+        /* রোটেশন অ্যানিমেশন এবং ওভারফ্লো ঠিক করার জন্য সিএসএস */
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* ১৬:৯ সাইজ নিশ্চিত করা হলো */
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        #pstu-player {
+            width: 100% !important;
+            height: 100% !important;
+            transition: transform 0.3s ease; /* ঘোরার সময় স্মুথ অ্যানিমেশন */
+        }
     </style>
 </head>
 <body>
@@ -25,12 +39,18 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="bg-gray-900/60 p-4 rounded-2xl border border-gray-800 shadow-2xl">
-                    <video id="pstu-player" class="video-js vjs-big-play-centered w-full aspect-video rounded-xl" controls preload="auto" data-setup='{}'>
-                        <source src="https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709-audio_113392_eng=113200-video=2202800.m3u8" type="application/x-mpegURL">
-                    </video>
+                    <div class="video-container">
+                        <video id="pstu-player" class="video-js vjs-big-play-centered" controls preload="auto" data-setup='{}'>
+                            <source src="https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709-audio_113392_eng=113200-video=2202800.m3u8" type="application/x-mpegURL">
+                        </video>
+                    </div>
                 </div>
-                <div class="mt-4 text-center">
+                
+                <div class="mt-4 flex flex-col sm:flex-row justify-between items-center gap-4 px-2">
                     <h2 id="channel-title" class="text-xl font-bold text-emerald-400">বর্তমানে চলছে: BTV</h2>
+                    <button onclick="rotateVideo()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg flex items-center gap-2 transition-all">
+                        🔄 স্ক্রিন ঘোরান (Rotate)
+                    </button>
                 </div>
             </div>
         </div>
@@ -39,19 +59,18 @@
     <section class="py-12 bg-[#090d16]">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-8 border-l-4 border-emerald-500 pl-4">সকল চ্যানেল লিস্ট</h2>
-            <div id="channel-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                </div>
+            <div id="channel-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
         </div>
     </section>
 
-    <footer clss="py-8 text-center text-gray-600 border-t border-gray-800">
-        <p>&copy; 2026 Kiron. All Rights Reserved.</p>
+    <footer class="py-8 text-center text-gray-600 border-t border-gray-800">
+        <p>© 2026 Kiron. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // আপনার দেওয়া ৫টি লাইভ চ্যানেলের লিস্ট এখানে সাজানো হয়েছে
+        // চ্যানেল লিস্টের সিনট্যাক্স ভুল (Deepto TV-তে ডাবল streamUrl ছিল) ঠিক করা হয়েছে
         const channels = [
-        {
+            {
                 id: 1,
                 name: "BTV",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709-audio_113392_eng=113200-video=2202800.m3u8",
@@ -67,45 +86,14 @@
                 id: 6,
                 name: "Somoy TV",
                 streamUrl: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
-                logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png" // এখানে লোগোর লিংক দিতে পারেন
+                logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png"
             },
             {
                 id: 15,
                 name: "Deepto TV HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/51/1/deepto-tv-logo-png_seeklogo-513994.png"
-            },
-       {
-                id: 9,
-                name: "Channel I HD",
-                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/1723-audio_113532_eng=113200-video=2202800.m3u8",
-                logo: "https://images.seeklogo.com/logo-png/42/1/channel-i-logo-png_seeklogo-427745.png"
-            },
-            {
-                id: 2,
-                name: "bein Sports",
-                streamUrl: "https://cp11.adabmedia.com/hls2/sport.m3u8",
-                logo: "https://images.seeklogo.com/logo-png/31/1/bein-sport-logo-png_seeklogo-314494.png"
-            },
-            {
-                id: 3,
-                name: "RTB Go",
-                streamUrl: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8",
-                logo: "https://via.placeholder.com/150?text=RTB+Go"
-            },
-            {
-                id: 4,
-                name: "Ten Sports 1",
-                streamUrl: "https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8",
-                logo: "https://via.placeholder.com/150?text=Stream+4"
-            },
-            {
-                id: 5,
-                name: "Sony Sports 2 HD",
-                streamUrl: "https://bldcmprod-cdn.toffeelive.com/cdn/live/sony_sports_2_hd/playlist.m3u8",
-                logo: "https://e7.pngegg.com/pngimages/362/254/png-clipart-star-sports-3-logo-television-channel-star-india-news-live-television-text-thumbnail.png"
             },      
-     
             {
                 id: 16,
                 name: "Independent TV HD",
@@ -189,6 +177,20 @@
             player.play();
             document.getElementById('channel-title').innerText = "বর্তমানে চলছে: " + name;
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ভিডিও রোটেশন লজিক (০, ৯০, ১৮০, ২৭০ ডিগ্রি)
+        let currentRotation = 0;
+        function rotateVideo() {
+            currentRotation = (currentRotation + 90) % 360;
+            const videoEl = document.getElementById('pstu-player');
+            
+            // রোটেশন অনুযায়ী স্কেল ঠিক করা যেন ভিডিও কেটে না যায়
+            if (currentRotation === 90 || currentRotation === 270) {
+                videoEl.style.transform = `rotate(${currentRotation}deg) scale(0.5625)`; // 9/16 = 0.5625
+            } else {
+                videoEl.style.transform = `rotate(${currentRotation}deg) scale(1)`;
+            }
         }
     </script>
 </body>
