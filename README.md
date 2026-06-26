@@ -75,43 +75,43 @@
                 logo: "https://images.seeklogo.com/logo-png/45/1/btv-bangladesh-television-logo-png_seeklogo-459657.png"
             },
             {
-                id: 7,
+                id: 2,
                 name: "Machranga HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/1722-audio_113522_eng=113200-video=2202800.m3u8",
                 logo: "https://mail.maasranga.tv/public/customize/newImage/logo.png"
             },
             {
-                id: 6,
+                id: 3,
                 name: "Somoy TV",
                 streamUrl: "https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png"
             },
             {
-                id: 15,
+                id: 4,
                 name: "Deepto TV HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/51/1/deepto-tv-logo-png_seeklogo-513994.png"
             },      
             {
-                id: 16,
+                id: 5,
                 name: "Independent TV HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/1704-audio_113342_eng=113200-video=1692000.m3u8",
                 logo: "https://e7.pngegg.com/pngimages/969/124/png-clipart-logo-bangladesh-independent-television-television-channel-design-television-text-thumbnail.png"
             },
             {
-                id: 17,
+                id: 6,
                 name: "Channel 1 HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/1702-audio_113322_eng=113200-video=2202800.m3u8",
                 logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhD46az4QUFMgrdxbIN9e4EckzhxmEDtPIOGvWWqyA_5nWquqbZrpD6B11GRryRtWKOVTfjwHjqpX7DiKkik2Rwp0RQMMpfolhiuKKUr9TFdXV9C9hXKOnqyoLnsOVv2gUPdEp5d_O_Uwxx/s1600/channel-one.jpg"
             },
             {
-                id: 18,
+                id: 7,
                 name: "Channel 9 HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1729/output/1729-audio_113592_eng=113200-video=2202800.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/53/1/channel-9-logo-png_seeklogo-532421.png"
             },
             {
-                id: 19,
+                id: 8,
                 name: "Global TV HD",
                 streamUrl: "https://stream.ottplus.live/live/global_tv_abr/live/global_tv_hd_720/chunks.m3u8",
                 logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9WjStYXWaJplIhxNIKKroXnqu_polO2VBj0RUz1lhMA&s=10"
