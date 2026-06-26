@@ -168,13 +168,13 @@
             id: 17,
             name: "Channel S HD",
             streamUrl: "https://stream.ottplus.bd/live/channel_s_hd_abr/live/channel_s_hd_720/chunks.m3u8",
-            logo: "https://static.wikia.nocookie.net/logopedia/images/9/9a/Channel_S_Bangladesh_Logo_2024.png/revision/latest?cb=20260509181517.jpg"
+            logo: "https://static.wikia.nocookie.net/logopedia/images/9/9a/Channel_S_Bangladesh_Logo_2024.png/revision/latest?cb=20260509181517"
         },
         {
             id: 18,
             name: "Jamuna TV HD",
             streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/1701-audio_113312_eng=113200-video=2202800.m3u8",
-            logo: "https://www.freekaj.com/assets/images/stock/image/2024/01/14/65a43ac0d1ffc1705261760.jpg"
+            logo: "https://assets-prod.services.toffeelive.com/w_480,q_75,f_webp/PiL635oBEef-9-uV2uCe/posters/36f380e0-6c71-4b27-a73b-2afb3ce7e982.png"
         },
         {
             id: 19,
