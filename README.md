@@ -162,7 +162,7 @@
             id: 16,
             name: "DBC News HD",
             streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1728/output/1728-audio_113582_eng=113200-video=3224800.m3u8",
-            logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
+            logo: "https://images.seeklogo.com/logo-png/62/1/dbc-news-logo-png_seeklogo-626101.png"
         },
         {
             id: 17,
