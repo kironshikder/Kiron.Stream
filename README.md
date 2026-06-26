@@ -8,7 +8,7 @@
     <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
     <style>
         body { background-color: #0b0f19; color: #fff; }
-        .hero-bg { background: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), #0b0f19), url('https://live.staticflickr.com/65535/52874358025_cf7574b78e_n.jpg') no-repeat center center/cover; }
+        .hero-bg { background: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), #0b0f19), url('https://photos.app.goo.gl/pszS45XEfzvFhjaY7') no-repeat center center/cover; }
         .channel-card:hover { transform: translateY(-5px); border-color: #10b981; }
     </style>
 </head>
