@@ -154,26 +154,26 @@
             },
         {
             id: 15,
-            name: "Ekattor TV HD",
-            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
+            name: "BanglVision TV HD",
+            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-video=2202800.m3u8",
             logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
         },
         {
             id: 16,
-            name: "Ekattor TV HD",
-            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
+            name: "DBC News HD",
+            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1728/output/1728-audio_113582_eng=113200-video=3224800.m3u8",
             logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
         },
         {
             id: 17,
-            name: "Ekattor TV HD",
-            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
+            name: "Channel S HD",
+            streamUrl: "https://stream.ottplus.bd/live/channel_s_hd_abr/live/channel_s_hd_720/chunks.m3u8",
             logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
         },
         {
             id: 18,
-            name: "Ekattor TV HD",
-            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
+            name: "Jamuna TV HD",
+            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/1701-audio_113312_eng=113200-video=2202800.m3u8",
             logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
         },
         {
