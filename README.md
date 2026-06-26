@@ -178,8 +178,8 @@
         },
         {
             id: 19,
-            name: "Ekattor TV HD",
-            streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/1705-audio_113352_eng=113200-video=2202800.m3u8",
+            name: "Toffee TV HD",
+            streamUrl: "https://sm-monirul.top/tof/live/toffee4/index.m3u8",
             logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
         },
         {
