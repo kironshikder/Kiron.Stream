@@ -156,7 +156,7 @@
             id: 15,
             name: "BanglVision TV HD",
             streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-video=2202800.m3u8",
-            logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
+            logo: "https://images.seeklogo.com/logo-png/51/1/bangla-vision-tv-channel-logo-png_seeklogo-513051.png"
         },
         {
             id: 16,
@@ -168,19 +168,19 @@
             id: 17,
             name: "Channel S HD",
             streamUrl: "https://stream.ottplus.bd/live/channel_s_hd_abr/live/channel_s_hd_720/chunks.m3u8",
-            logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
+            logo: "https://static.wikia.nocookie.net/logopedia/images/9/9a/Channel_S_Bangladesh_Logo_2024.png/revision/latest?cb=20260509181517.jpg"
         },
         {
             id: 18,
             name: "Jamuna TV HD",
             streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/1701-audio_113312_eng=113200-video=2202800.m3u8",
-            logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
+            logo: "https://www.freekaj.com/assets/images/stock/image/2024/01/14/65a43ac0d1ffc1705261760.jpg"
         },
         {
             id: 19,
             name: "Toffee TV HD",
             streamUrl: "https://sm-monirul.top/tof/live/toffee4/index.m3u8",
-            logo: "https://cdn.ekattorbd.com/contents/themes/public/style/images/logo.png"
+            logo: "https://toffeelive.com/images/logos/logo.svg"
         },
         {
             id: 20,
