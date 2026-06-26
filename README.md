@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <footer class="py-8 text-center text-gray-600 border-t border-gray-800">
+    <footer clss="py-8 text-center text-gray-600 border-t border-gray-800">
         <p>&copy; 2026 Kiron. All Rights Reserved.</p>
     </footer>
 
@@ -75,7 +75,7 @@
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/1711-audio_113412_eng=113200-video=2202800.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/51/1/deepto-tv-logo-png_seeklogo-513994.png"
             },
-  t      {
+       {
                 id: 9,
                 name: "Channel I HD",
                 streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/1723-audio_113532_eng=113200-video=2202800.m3u8",
@@ -133,7 +133,7 @@
             {
                 id: 9,
                 name: "Sangeet Bangla HD",
-                streamUrl: "[https://cdn-4.pishow.tv/live/1143/master.m3u8]",
+                streamUrl: "https://cdn-4.pishow.tv/live/1143/master.m3u8",
                 logo: "https://via.placeholder.com/150?text=Sony+Sports+2"
             },
             {
