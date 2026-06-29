@@ -196,7 +196,7 @@
         },
         {
             id: 21,
-            name: "Test TV HD",
+            name: "bein Sports 1 (max) HD",
             streamUrl: "https://cp11.adabmedia.com/hls2/sport.m3u8",
             logo: "https://cdn.ekatttorbd.com/contents/themes/public/style/images/logo.png"
         },
