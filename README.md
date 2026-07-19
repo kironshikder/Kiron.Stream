@@ -185,12 +185,12 @@
         {
             id: 19,
             name: "Toffee TV HD",
-            streamUrl: "https://sm-monirul.top/tof/live/toffee4/index.m3u8",
+            streamUrl: "http://10.10.230.182:8080/ch5/index.m3u8",
             logo: "https://toffeelive.com/images/logos/logo.svg"
         },
         {
             id: 20,
-            name: "RtbGo HD",
+            name: "PTV HD",
             streamUrl: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8",
             logo: "https://cdn.ekattor-bd.com/contents/themes/public/style/images/logo.png"
         },
