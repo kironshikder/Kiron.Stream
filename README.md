@@ -191,7 +191,7 @@
         {
             id: 20,
             name: "PTV HD",
-            streamUrl: "https://d1211whpimeups.cloudfront.net/smil:rtbgo/chunklist.m3u8",
+            streamUrl: "http://10.10.230.182:8080/ch5/index.m3u8",
             logo: "https://cdn.ekattor-bd.com/contents/themes/public/style/images/logo.png"
         },
         {
