@@ -77,7 +77,7 @@
             {
                 id: 1,
                 name: "BTV",
-                streamUrl: "https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/1709-audio_113392_eng=113200-video=2202800.m3u8",
+                streamUrl: "http://10.10.230.182:8080/ch3/index.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/45/1/btv-bangladesh-television-logo-png_seeklogo-459657.png"
             },
             {
@@ -149,7 +149,7 @@
             {
                 id: 13,
                 name: "T Sports HD",
-                streamUrl: "https://trs1.aynaott.com/tsports/tracks-v1a1/mono.ts.m3u8",
+                streamUrl: "http://10.10.230.182:8080/ch2/index.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png"
             },
             {
