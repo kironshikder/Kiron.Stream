@@ -89,7 +89,7 @@
             {
                 id: 3,
                 name: "Somoy TV",
-                streamUrl: "http://10.10.230.182:8080/ch2/index.m3u8",
+                streamUrl: "http://10.10.230.182:8080/ch1/index.m3u8",
                 logo: "https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png"
             },
             {
